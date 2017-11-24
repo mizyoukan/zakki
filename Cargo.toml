@@ -1,0 +1,11 @@
+[package]
+authors = ["Tamaki Mizuha <mizyoukan@outlook.com>"]
+name = "zakki"
+version = "0.1.0"
+[dependencies]
+rocket = "0.3.3"
+rocket_codegen = "0.3.3"
+
+[dependencies.maud]
+features = ["rocket"]
+version = "0.17.2"
