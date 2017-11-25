@@ -1,6 +1,7 @@
 language: cpp
-
 compiler: clang
+dist: trusty
+sudo: false
 
 os:
   - linux
@@ -15,9 +16,11 @@ cache:
     - $TRAVIS_BUILD_DIR/target
 
 install:
-  - curl https://sh.rustup.rs -sSf | sh -s -- -y --default-toolchain nightly
-  - rustup target add x86_64-unknown-linux-musl
+  - curl https://sh.rustup.rs -sSf | sh -s -- --verbose -y --default-toolchain nightly
   - export PATH=$PATH:$HOME/.cargo/bin
+  - cargo --verbose --version
+  - rustc --verbose --version
+  - rustup target add x86_64-unknown-linux-musl
 
 script:
   - cargo build --target $TARGET --verbose
