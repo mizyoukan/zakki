@@ -28,7 +28,7 @@ script:
 
 before_deploy:
   - cargo build --release --target $TARGET
-  - zip ${PROJECT_NAME}-${TRAVIS_TAB}-${TARGET}.zip target/$TARGET/release/${PROJECT_NAME}
+  - zip "${PROJECT_NAME}-${TRAVIS_TAB}-${TARGET}.zip" target/$TARGET/release/${PROJECT_NAME}
 
 deploy:
   provider: releases
