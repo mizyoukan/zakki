@@ -20,7 +20,7 @@ install:
   - export PATH=$PATH:$HOME/.cargo/bin
   - cargo --verbose --version
   - rustc --verbose --version
-  - rustup target add x86_64-unknown-linux-musl
+  - rustup target add $TARGET
 
 script:
   - cargo build --verbose --target $TARGET
@@ -28,7 +28,7 @@ script:
 
 before_deploy:
   - cargo build --release --target $TARGET
-  - zip zakki-${TRAVIS_BRANCH}-${TARGET}.zip target/$TARGET/release/zakki
+  - zip -j zakki-${TRAVIS_BRANCH}-${TARGET}.zip target/$TARGET/release/zakki
 
 deploy:
   provider: releases
