@@ -1,19 +1,21 @@
-language: rust
+language: cpp
 
-matrix:
-  include:
-    - os: linux
-      rust: nightly
-      env: TARGET=x86_64-unknown-linux-musl
-      dist: trusty
-      sudo: required
-      addons:
-        apt:
-          packages: *musl_packages
+os:
+  - linux
 
-before_script:
-  - export PATH=$PATH:$HOME/.cargo/bin
+env:
+  - TARGET=x86_64-unknown-linux-musl
+
+cache:
+  directories:
+    - $HOME/.cargo
+    - $HOME/.rustup
+    - $TRAVIS_BUILD_DIR/target
+
+install:
+  - curl https://sh.rustup.rs -sSf | sh -s -- --default-toolchain nightly
   - rustup target add x86_64-unknown-linux-musl
+  - export PATH=$PATH:$HOME/.cargo/bin
 
 script:
   - cargo build --target $TARGET --verbose
