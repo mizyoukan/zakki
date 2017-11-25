@@ -9,6 +9,16 @@ os:
 env:
   - TARGET=x86_64-unknown-linux-musl
 
+dist:
+  - trusty
+
+sudo:
+  - required
+
+addons:
+  apt:
+    packages: *musl_packages
+
 script:
   - cargo build --target $TARGET --verbose
   - cargo test --verbose
