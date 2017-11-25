@@ -36,3 +36,9 @@ deploy:
     secure: "cs76sePBL1JITB8yqWAYXbr0KXQGqVoTJj1U4W91udCfFoiV8reh3o+BPCpG0JrHIMf/+kmWvBjrdCbtE5RrKl8w/8caW7wnE2zI2nzG4s0E63OhhYIrHkIMxo0xwThkct+nrVTu+OCF0hGlbCGNaP0WzGJ+Kx/MDvYqzgX8q3k4GK48xOD3EI4YczaBgvllq7SHQOT/oHFuPsJgTNjP574YmKLnkGuwIYjo1zSSnL5hCMEWKoFEM9DQMI9XZg8O041S/fvF0T4u9vuTtMd5Q1odGgJpZYO4ZuNcUe8+HILUFcyIwP8CnElsuPsitBIOpNPWPSQb+Q0CbkkHbBlX+AGLeJnShD4FTemF5JzdSOmCTGdB1K2tU+EuMwvsH/WP2F9GpUmgqE89eAXV46JJ+BYjTs4fzBH8RbPY+vZcfNTKsXKlZyHbshU8XNf0C9HRIDpDJASCMtwPXZJl1S86Q2K8is/2nUshuoX0/4CT24Auj3AqzAprS31HUHhIVwZJxBaGWFYHuLXX6J3agoe8G5PQkBf5cKFfv728cVwOfJcusOkJeBhykjHKf+sP+ehLHhXxMw5EslqB5klTptdR+3/eocNDrXejqTZ17NLMLo8F+sAuu4zb7pQRVSTjiNr+Wea+M5hFxzCYjrAUtf8OakA+W9vqzvn+Smy+fqOjS6k="
   file: ${PROJECT_NAME}-${TRAVIS_TAG}-${TARGET}.zip
   skip_cleanup: true
+  on:
+    repo: mizyoukan/zakki
+
+notifications:
+  email:
+    on_success: never
