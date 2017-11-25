@@ -1,5 +1,7 @@
 language: cpp
 
+compiler: clang
+
 os:
   - linux
 
@@ -13,7 +15,7 @@ cache:
     - $TRAVIS_BUILD_DIR/target
 
 install:
-  - curl https://sh.rustup.rs -sSf | sh -s -- --default-toolchain nightly
+  - curl https://sh.rustup.rs -sSf | sh -s -- -y --default-toolchain nightly
   - rustup target add x86_64-unknown-linux-musl
   - export PATH=$PATH:$HOME/.cargo/bin
 
