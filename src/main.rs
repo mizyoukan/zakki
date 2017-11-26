@@ -18,7 +18,6 @@ fn index_page() -> Markup {
             }
             body {
                 p "Hello, world!"
-                p "test"
             }
         }
     }
