@@ -3,9 +3,23 @@ authors = ["Tamaki Mizuha <mizyoukan@outlook.com>"]
 name = "zakki"
 version = "0.1.0"
 [dependencies]
+ammonia = "1.0.0"
+chrono = "0.4.0"
+error-chain = "0.11.0"
+r2d2 = "0.8.0"
+r2d2_postgres = "0.14.0"
 rocket = "0.3.3"
 rocket_codegen = "0.3.3"
+sha2 = "0.7.0"
 
 [dependencies.maud]
 features = ["rocket"]
 version = "0.17.2"
+
+[dependencies.postgres]
+features = ["with-chrono"]
+version = "0.15.1"
+
+[dependencies.pulldown-cmark]
+default-features = false
+version = "0.1.0"

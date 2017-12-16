@@ -1,0 +1,17 @@
+
+# required, do not edit
+database_type = "postgres"
+
+database_name = "zakki"      # required
+database_user = "postgres"      # required
+database_password = "Password12!"
+
+database_host = "localhost"         # default "localhost"
+database_port = "5432"              # default "5432"
+migration_location = "migrations"   # default "migrations"
+
+# with the format:
+# [database_params]
+# key = "value"
+[database_params]
+

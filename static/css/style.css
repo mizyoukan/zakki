@@ -1,0 +1,64 @@
+body {
+    font-family: "Helvetica Neue", "Segoe UI", sans-serif;
+    color: #505050;
+    margin: 0;
+}
+
+body {
+    display: grid;
+    grid-template-rows: 60px 1fr;
+    min-width: 640px;
+}
+
+header {
+    grid-row: 1;
+}
+
+main {
+    grid-row: 2;
+}
+
+header {
+    background-color: #eee;
+}
+
+header h1 {
+    margin: 10px 0 0 30px;
+}
+
+header h1 a {
+    font-size: 20px;
+    color: #704550;
+    text-decoration: none;
+}
+
+main {
+    margin: 5px 15px;
+    font-size: 13px;
+}
+
+main article {
+    border: 1px solid #eee;
+    border-radius: 10px;
+    
+    margin: 10px 0;
+    padding: 0 15px;
+}
+
+main article h1 {
+    font-size: 1.35em;
+    margin-bottom: 0;
+}
+
+main article h1 a {
+    color: #704550;
+}
+
+main article a {
+    color: #904550;
+    text-decoration: none;
+}
+
+main article footer {
+    font-size: 0.9em;
+}
