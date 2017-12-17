@@ -27,7 +27,7 @@ install:
 
 before_script:
   - psql -c 'CREATE DATABASE zakki;' -U postgres
-  - psql -c 'CREATE USER zakki WITH PASSWORD 'zakki';' -U postgres
+  - psql -c "CREATE USER zakki WITH PASSWORD 'zakki';" -U postgres
 
 script:
   - cargo build --verbose --target $TARGET
