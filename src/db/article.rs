@@ -125,7 +125,6 @@ mod tests {
                 name: "system".to_owned(),
             };
             let article = Article::create(conn, "title", "body", &author).unwrap();
-            println!("Article id is {:?}", article.id);
             assert!(article.id > 0, "article id is present");
         });
     }
