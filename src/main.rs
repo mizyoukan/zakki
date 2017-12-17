@@ -16,6 +16,9 @@ extern crate r2d2_postgres;
 extern crate rocket;
 extern crate sha2;
 
+#[cfg(test)]
+extern crate toml;
+
 mod db;
 mod errors;
 mod views;

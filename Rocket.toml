@@ -1,2 +1,2 @@
 [development]
-database_url = "postgres://postgres:Password12!@localhost:5432/zakki"
+database_url = "postgres://zakki:zakki@localhost:5432/zakki"
