@@ -16,6 +16,7 @@ before_script:
   - cargo install --force migrant --features postgresql
   - migrant --version
   - migrant setup
+  - migrant apply
 
 script:
   - cargo build --verbose --target $TARGET
