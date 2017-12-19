@@ -2,11 +2,11 @@
 # required, do not edit
 database_type = "postgres"
 
-database_name = "d72ac1t73utkno"      # required
-database_user = "mbtejyrkynhorx"      # required
-database_password = "deb58d90153386bf43b61bfd6ba4db3f7c12568a486d128475cd167a8911a510"
+database_name = "zakki"      # required
+database_user = "zakki"      # required
+database_password = "zakki"
 
-database_host = "ec2-54-163-233-103.compute-1.amazonaws.com"         # default "localhost"
+database_host = "localhost"         # default "localhost"
 database_port = "5432"              # default "5432"
 migration_location = "migrations"   # default "migrations"
 
