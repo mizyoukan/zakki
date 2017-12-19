@@ -1,7 +1,5 @@
-language: cpp
-compiler: clang
-dist: trusty
-sudo: false
+language: rust
+rust: nightly
 
 services:
   - postgresql
@@ -10,20 +8,7 @@ os:
   - linux
 
 env:
-  - TARGET=x86_64-unknown-linux-musl
-
-cache:
-  directories:
-    - $HOME/.cargo
-    - $HOME/.rustup
-    - $TRAVIS_BUILD_DIR/target
-
-install:
-  - curl https://sh.rustup.rs -sSf | sh -s -- --verbose -y --default-toolchain nightly
-  - export PATH=$PATH:$HOME/.cargo/bin
-  - cargo --verbose --version
-  - rustc --verbose --version
-  - rustup target add $TARGET
+  - TARGET=x86_64-unknown-linux-gnu
 
 before_script:
   - psql -c 'CREATE DATABASE zakki;' -U postgres
