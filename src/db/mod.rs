@@ -6,7 +6,9 @@ pub mod testutil;
 
 use errors::*;
 
+use openssl::ssl::{SslMethod, SslConnectorBuilder, SSL_VERIFY_NONE};
 use postgres;
+use postgres::tls::openssl::OpenSsl;
 use r2d2;
 use r2d2_postgres::{PostgresConnectionManager, TlsMode};
 use rocket::{Outcome, Request, State};
@@ -21,7 +23,10 @@ pub type Pool = r2d2::Pool<PostgresConnectionManager>;
 pub struct Connection(r2d2::PooledConnection<PostgresConnectionManager>);
 
 pub fn init_pool(database_url: &str) -> Result<Pool> {
-    let manager = PostgresConnectionManager::new(database_url, TlsMode::None)?;
+    let mut connector = SslConnectorBuilder::new(SslMethod::tls())?;
+    connector.set_verify(SSL_VERIFY_NONE);
+    let openssl = OpenSsl::from(connector.build());
+    let manager = PostgresConnectionManager::new(database_url, TlsMode::Prefer(Box::new(openssl)))?;
     let pool = r2d2::Pool::new(manager)?;
     Ok(pool)
 }

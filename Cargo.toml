@@ -6,6 +6,7 @@ version = "0.1.0"
 ammonia = "1.0.0"
 chrono = "0.4.0"
 error-chain = "0.11.0"
+openssl = "0.9.23"
 r2d2 = "0.8.0"
 r2d2_postgres = "0.14.0"
 rocket = "0.3.3"
@@ -17,7 +18,7 @@ features = ["rocket"]
 version = "0.17.2"
 
 [dependencies.postgres]
-features = ["with-chrono"]
+features = ["with-chrono", "with-openssl"]
 version = "0.15.1"
 
 [dependencies.pulldown-cmark]

@@ -9,6 +9,7 @@ extern crate chrono;
 #[macro_use]
 extern crate error_chain;
 extern crate maud;
+extern crate openssl;
 extern crate postgres;
 extern crate pulldown_cmark;
 extern crate r2d2;
